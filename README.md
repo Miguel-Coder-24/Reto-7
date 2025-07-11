@@ -39,14 +39,6 @@ classDiagram
         + calculate_total_bill()
     }
 
-    class Tarjeta
-    class Efectivo
-    class ColaFIFO {
-        - items: list
-        + encolar()
-        + desencolar()
-    }
-
     class Restaurante {
         - ordenes: ColaFIFO
         + agregar_orden()
@@ -60,16 +52,6 @@ classDiagram
         + eliminar_item()
         + mostrar_menu()
     }
-
-    class Payment
-
-    Menu_item <|-- Beverage
-    Menu_item <|-- Appetizer
-    Menu_item <|-- Main_course
-    Menu_item <|-- Dessert
-
-    Payment <|-- Tarjeta
-    Payment <|-- Efectivo
 
     Restaurante --> ColaFIFO
     ColaFIFO --> Order
