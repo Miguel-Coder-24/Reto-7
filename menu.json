@@ -1,0 +1,90 @@
+{
+  "Agua": {
+    "precio": 1500,
+    "tipo": "beverage",
+    "tamano": "250ml",
+    "sabor": "Sin gas"
+  },
+  "Cocacola": {
+    "precio": 2500,
+    "tipo": "beverage",
+    "tamano": "250ml",
+    "sabor": "Clasica"
+  },
+  "Jugo de Naranja": {
+    "precio": 4000,
+    "tipo": "beverage",
+    "tamano": "350ml",
+    "sabor": "Natural"
+  },
+  "Cerveza": {
+    "precio": 3500,
+    "tipo": "beverage",
+    "tamano": "330ml",
+    "sabor": "Malta"
+  },
+  "Nachos": {
+    "precio": 9000,
+    "tipo": "appetizer",
+    "tamano": "mediano"
+  },
+  "Papitas": {
+    "precio": 7000,
+    "tipo": "appetizer",
+    "tamano": "grande"
+  },
+  "Patacones": {
+    "precio": 8000,
+    "tipo": "appetizer",
+    "tamano": "grande"
+  },
+  "Arepas": {
+    "precio": 6000,
+    "tipo": "appetizer",
+    "tamano": "mediano"
+  },
+  "Hamburguesa": {
+    "precio": 17000,
+    "tipo": "main_course",
+    "tamano": "1/4 libra"
+  },
+  "Pizza": {
+    "precio": 20000,
+    "tipo": "main_course",
+    "tamano": "grande"
+  },
+  "Pasta": {
+    "precio": 15000,
+    "tipo": "main_course",
+    "tamano": "personal"
+  },
+  "Pollo": {
+    "precio": 18000,
+    "tipo": "main_course",
+    "tamano": "grande"
+  },
+  "Helado": {
+    "precio": 5000,
+    "tipo": "dessert",
+    "tamano": "personal",
+    "sabor": "chocolate"
+  },
+  "Torta": {
+    "precio": 8000,
+    "tipo": "dessert",
+    "tamano": "mediano",
+    "sabor": "vainilla"
+  },
+  "Galletas": {
+    "precio": 3000,
+    "tipo": "dessert",
+    "tamano": "personal",
+    "sabor": "chocolate"
+  },
+  "Flan": {
+    "precio": 4000,
+    "tipo": "dessert",
+    "tamano": "personal",
+    "sabor": "coco"
+  }
+}
