@@ -5,6 +5,7 @@
   + Create an interface in the order class, to create a new menu, aggregate the functions for add, update, delete items. All the menus should be stored as JSON files. (use dicts for this task.)
 
 mermaid
+'''
 
 classDiagram
     class Menu_item {
@@ -75,7 +76,7 @@ classDiagram
     Restaurante --> ColaFIFO
     ColaFIFO --> Order
     Order --> Menu_item
-
+'''
 
 # Sistema de Restaurante en Python
 
@@ -103,32 +104,19 @@ Aunque Python tiene la librería `queue`, aquí se implementa una cola FIFO **pa
 
 Esto refuerza la comprensión de estructuras de datos y el pensamiento lógico.
 
-    ----
     
 ## Flujo del sistema
 
-Cliente
-   │
-   ▼
-Crea orden (Order)
-   │
-   ▼
-Agrega ítems (add_item)
-   │
-   ▼
-Calcula total y descuentos
-   │
-   ▼
-Selecciona método de pago
- ┌────────────┬────────────┐
- │ Tarjeta    │ Efectivo   │
- ▼            ▼            ▼
-pagar()     pagar()     guardar orden
-   ▼
-Orden encolada (ColaFIFO)
-   │
-   ▼
-Restaurante atiende orden (desencolar)
-
-```bash
-
+flowchart TD
+    A[Cliente] --> B[Crear orden]
+    B --> C[Agregar ítems al pedido]
+    C --> D[Calcular total y aplicar descuentos]
+    D --> E{¿Método de pago?}
+    E --> F[Tarjeta]
+    E --> G[Efectivo]
+    F --> H[Procesar pago con tarjeta]
+    G --> I[Procesar pago en efectivo]
+    H --> J[Encolar orden en ColaFIFO]
+    I --> J
+    J --> K[Restaurante atiende orden]
+    K --> L[Desencolar y mostrar factura]
