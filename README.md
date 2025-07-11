@@ -39,23 +39,29 @@ classDiagram
         + calculate_total_bill()
     }
 
+    class ColaFIFO {
+        - items: list
+        + encolar()
+        + desencolar()
+    }
+
     class Restaurante {
         - ordenes: ColaFIFO
         + agregar_orden()
         + atender_orden()
     }
 
-    class Menu {
-        - items: dict
-        + agregar_item()
-        + actualizar_item()
-        + eliminar_item()
-        + mostrar_menu()
-    }
+
+    Menu_item <|-- Beverage
+    Menu_item <|-- Appetizer
+    Menu_item <|-- Main_course
+    Menu_item <|-- Dessert
+
 
     Restaurante --> ColaFIFO
     ColaFIFO --> Order
     Order --> Menu_item
+
 ```
 
 # Sistema de Restaurante en Python
