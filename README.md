@@ -4,12 +4,81 @@
   + Define a **named tuple** somewhere in the menu, e.g. to define a set of items.
   + Create an interface in the order class, to create a new menu, aggregate the functions for add, update, delete items. All the menus should be stored as JSON files. (use dicts for this task.)
 
+classDiagram
+    class Menu_item {
+        - __name: str
+        - __price: float
+        + get_name()
+        + set_name()
+        + get_price()
+        + set_price()
+    }
+
+    class Beverage {
+        - __type: str
+        - __size: str
+        - __flavor: str
+        + agua()
+        + cocacola()
+        + get_type()
+        + get_size()
+        + get_flavor()
+    }
+
+    class Appetizer
+    class Main_course
+    class Dessert
+    class Order {
+        - order_number: int
+        - mesa: int
+        - items: list
+        + add_item()
+        + remove_item()
+        + descuento()
+        + calculate_total_bill()
+    }
+
+    class Tarjeta
+    class Efectivo
+    class ColaFIFO {
+        - items: list
+        + encolar()
+        + desencolar()
+    }
+
+    class Restaurante {
+        - ordenes: ColaFIFO
+        + agregar_orden()
+        + atender_orden()
+    }
+
+    class Menu {
+        - items: dict
+        + agregar_item()
+        + actualizar_item()
+        + eliminar_item()
+        + mostrar_menu()
+    }
+
+    class Payment
+
+    Menu_item <|-- Beverage
+    Menu_item <|-- Appetizer
+    Menu_item <|-- Main_course
+    Menu_item <|-- Dessert
+
+    Payment <|-- Tarjeta
+    Payment <|-- Efectivo
+
+    Restaurante --> ColaFIFO
+    ColaFIFO --> Order
+    Order --> Menu_item
+
 
 # Sistema de Restaurante en Python
 
 Este proyecto es un sistema de restaurante que usa  manejo de archivos **JSON**, uso de `namedtuple`, y estructuras de datos como **colas FIFO** implementadas manualmente.
 
----
 
 ## Estructura del Proyecto
 
@@ -21,7 +90,6 @@ Este proyecto es un sistema de restaurante que usa  manejo de archivos **JSON**,
   - Uso de `namedtuple` para representar ítems del menú de forma alternativa.
   - Ejemplos de uso al final para probar las funciones.
 
----
 
 ## ¿Por qué una cola FIFO manual?
 
@@ -33,6 +101,32 @@ Aunque Python tiene la librería `queue`, aquí se implementa una cola FIFO **pa
 
 Esto refuerza la comprensión de estructuras de datos y el pensamiento lógico.
 
+    ----
+    
+## Flujo del sistema
+
+Cliente
+   │
+   ▼
+Crea orden (Order)
+   │
+   ▼
+Agrega ítems (add_item)
+   │
+   ▼
+Calcula total y descuentos
+   │
+   ▼
+Selecciona método de pago
+ ┌────────────┬────────────┐
+ │ Tarjeta    │ Efectivo   │
+ ▼            ▼            ▼
+pagar()     pagar()     guardar orden
+   ▼
+Orden encolada (ColaFIFO)
+   │
+   ▼
+Restaurante atiende orden (desencolar)
 
 ```bash
-python restaurante.py
+
