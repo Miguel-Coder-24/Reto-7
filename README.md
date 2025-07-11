@@ -4,8 +4,7 @@
   + Define a **named tuple** somewhere in the menu, e.g. to define a set of items.
   + Create an interface in the order class, to create a new menu, aggregate the functions for add, update, delete items. All the menus should be stored as JSON files. (use dicts for this task.)
 
-mermaid
-'''
+'''mermaid
 
 classDiagram
     class Menu_item {
@@ -106,7 +105,7 @@ Esto refuerza la comprensión de estructuras de datos y el pensamiento lógico.
 
     
 ## Flujo del sistema
-
+'''
 flowchart TD
     A[Cliente] --> B[Crear orden]
     B --> C[Agregar ítems al pedido]
@@ -120,3 +119,4 @@ flowchart TD
     I --> J
     J --> K[Restaurante atiende orden]
     K --> L[Desencolar y mostrar factura]
+    '''
